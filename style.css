@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk:MORF,SHLN@34,55.6&family=Pixelify+Sans:wght@400..700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    background-image: url("./background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+main {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    /* z-index: 2; */
+    position: relative;
+}
+
+.btn-container {
+    margin: 10px;
+    background-color: rgba(240, 248, 255, 0.72);
+    width: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.btn-container button,
+.fighting {
+    width: 30%;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    padding: 5px;
+}
+
+.dropdown-menu {
+    width: 40%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    width: 100%;
+    height: 50px;
+}
+
+.div-pockemon {
+    width: 80%;
+    min-height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -ms-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    background: rgba(56, 55, 55, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: -1;
+}
+
+.container-pockemon {
+    width: 35%;
+    height: 90%;
+    border-radius: 10px;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-pockemon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    gap: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section-pockemon img {
+    width: 85%;
+    height: 250px;
+    border: 3px solid black;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: rgba(89, 89, 89, 0.899);
+    filter: brightness(1.2) contrast(1.2) saturate(1.2);
+    -webkit-filter: brightness(1.2) contrast(1.2) saturate(1.2);
+}
+
+.section-pockemon h3 {
+    text-transform: capitalize;
+}
+
+.section-pockemon .text {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60%;
+    gap: 7px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(28, 28, 28, 0.3);
+    background-color: rgba(249, 252, 252, 0.761);
+    padding: 15px;
+}
+
+.section-pockemon .text h3 {
+    background: linear-gradient(90deg, rgba(31, 36, 230, 1) 0%, rgba(251, 10, 25, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.stop {
+    pointer-events: none;
+}
+
+.type-div {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.type-span {
+    background-color: rgb(10, 104, 84);
+    width: 100px;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.try-again {
+    position: absolute;
+    width: 70%;
+    height: 400px;
+    background-color: rgba(237, 153, 7, 0.643);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -ms-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+    background-color: rgba(228, 149, 1, 0.771);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(237, 153, 7, 0.643);
+    color: #064658f3;
+}
+
+.show {
+    opacity: 1;
+}
+
+progress {
+    background-color: green;
+}
+
+.replay {
+    background-color: orangered;
+    width: 150px;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.replay.show {
+    display: block
+}
+
+.description {
+    width: 70%;
+    min-height: 200px;
+    padding: 20px;
+    line-height: 2;
+    text-transform: capitalize;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    letter-spacing: 1.2px;
+    background-color: rgba(125, 8, 125, 0.826);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 0, 0, 0.596);
+    padding: 5px;
+    color: aliceblue;
+}
+
+.replay-div {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(23, 23, 23, 0.333);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.replay-div.show {
+    opacity: 1;
+    z-index: 1;
+}
+
+.description-container {
+    width: 100%;
+    min-height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s linear;
+    -webkit-transition: opacity 0.4s linear;
+    -moz-transition: opacity 0.4s linear;
+    -ms-transition: opacity 0.4s linear;
+    -o-transition: opacity 0.4s linear;
+}
+
+.description-container.show {
+    opacity: 1;
+    transition: opacity 0.4s linear;
+    -webkit-transition: opacity 0.4s linear;
+    -moz-transition: opacity 0.4s linear;
+    -ms-transition: opacity 0.4s linear;
+    -o-transition: opacity 0.4s linear;
+}
+
+.fighting-result {
+    width: 70%;
+    min-height: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(28, 28, 28, 0.3);
+    background-color: rgba(112, 221, 221, 0.998);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-figthing {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.select-box {
+    position: relative;
+    width: 60%;
+}
+
+.select-option {
+    position: relative;
+}
+
+.select-option input {
+    width: 100%;
+    background-color: #ffff;
+    color: black;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 15px 20px;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+.select-option:after {
+    content: "";
+    border-top: 12px solid black;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.content {
+    background-color: #ffff;
+    position: absolute;
+    color: #000;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    margin-top: 15px;
+    width: 100%;
+    z-index: 999;
+    padding: 20px;
+    display: none;
+}
+
+#optionsearch {
+    width: 80%;
+    height: 40px;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+}
+
+#search input {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    padding: 15px;
+    outline: 0;
+    border: 5px;
+}
+
+.options {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.options li {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-bottom: 1px solid gray;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.options li:hover {
+    background-color: #f2f2f2;
+}
+
+.select-box.active .content {
+    display: block;
+}
+
+.select-box.active .select-option:after {
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+
+.stop {
+    pointer-events: none;
+}
+
+.winner {
+    color: orange;
+    text-transform: capitalize;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.winner-container {
+    text-align: center;
+}
+
+.fighting {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    padding: 5px;
+    width: 20%;
+    height: 70px;
+    margin-top: 10px;
+}
+
+::-webkit-progress-bar {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+progress {
+    background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+    background-color: rgb(35, 244, 8);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.fighting-btns-container {
+    width: 80%;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.846);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.fighting-btns-container button {
+    width: 20%;
+    height: 50%;
+    background-color: rgb(27, 54, 165);
+    color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 5px;
+}
+
+.fighter1,
+.fighter2 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+.fighting-btns-container button.show {
+    /* display: block; */
+    visibility: visible;
+}
+
+.fighting-btns-container button.hidden {
+    /* display: none; */
+    visibility: hidden;
+}
+
+.fighting-result p {
+    background: linear-gradient(90deg, rgb(57, 63, 252) 0%, rgb(249, 0, 17) 50%, rgb(20, 32, 255) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+
+/* shake animation */
+
+.shake {
+    animation: shake 1s infinite;
+    -webkit-animation: shake 1s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+        -webkit-transform: translate(0px, 0px) rotate(0deg);
+        -moz-transform: translate(0px, 0px) rotate(0deg);
+        -ms-transform: translate(0px, 0px) rotate(0deg);
+        -o-transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(1px, 1px) rotate(1deg);
+        -webkit-transform: translate(1px, 1px) rotate(1deg);
+        -moz-transform: translate(1px, 1px) rotate(1deg);
+        -ms-transform: translate(1px, 1px) rotate(1deg);
+        -o-transform: translate(1px, 1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, -1px) rotate(-1deg);
+        -webkit-transform: translate(-1px, -1px) rotate(-1deg);
+        -moz-transform: translate(-1px, -1px) rotate(-1deg);
+        -ms-transform: translate(-1px, -1px) rotate(-1deg);
+        -o-transform: translate(-1px, -1px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(2px, -1px) rotate(2deg);
+        -webkit-transform: translate(2px, -1px) rotate(2deg);
+        -moz-transform: translate(2px, -1px) rotate(2deg);
+        -ms-transform: translate(2px, -1px) rotate(2deg);
+        -o-transform: translate(2px, -1px) rotate(2deg);
+    }
+    100% {
+        transform: translate(-1px, 1px) rotate(-1deg);
+        -webkit-transform: translate(-1px, 1px) rotate(-1deg);
+        -moz-transform: translate(-1px, 1px) rotate(-1deg);
+        -ms-transform: translate(-1px, 1px) rotate(-1deg);
+        -o-transform: translate(-1px, 1px) rotate(-1deg);
+    }
+}
+
+
+/* fire animation */
+
+.container-pockemon:nth-child(1) .fire {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: gold;
+    position: absolute;
+    animation: fire 1s linear;
+    -webkit-animation: fire 1s linear;
+    display: none;
+}
+
+@keyframes fire {
+    0% {
+        transform: translateX(50px);
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        -o-transform: translateX(50px);
+    }
+    40% {
+        transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        -o-transform: translateX(100px);
+    }
+    50% {
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+        -moz-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+        -o-transform: translateX(200px);
+    }
+    75% {
+        transform: translateX(300px);
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        -o-transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(500px);
+        -webkit-transform: translateX(500px);
+        -moz-transform: translateX(500px);
+        -ms-transform: translateX(500px);
+        -o-transform: translateX(500px);
+    }
+}
+
+.container-pockemon:nth-child(2) .fire {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: gold;
+    position: absolute;
+    animation: fire1 1s linear;
+    -webkit-animation: fire1 1s linear;
+    display: none;
+}
+
+@keyframes fire1 {
+    0% {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+    }
+    40% {
+        transform: translateX(-100px);
+        -webkit-transform: translateX(-100px);
+        -moz-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+        -o-transform: translateX(-100px);
+    }
+    50% {
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+        -moz-transform: translateX(-200px);
+        -ms-transform: translateX(-200px);
+        -o-transform: translateX(-200px);
+    }
+    75% {
+        transform: translateX(-300px);
+        -webkit-transform: translateX(-300px);
+        -moz-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        -o-transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(-400px);
+        -webkit-transform: translateX(-400px);
+        -moz-transform: translateX(-400px);
+        -ms-transform: translateX(-400px);
+        -o-transform: translateX(-400px);
+    }
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/**/
+
+
+/* media*/
+
+@media (max-width:900px) {
+    .btn-container {
+        width: 77%;
+        top: 8%;
+        padding: 10px;
+        margin: 10px;
+    }
+    .btn-container button {
+        width: 35%;
+        height: 50px;
+        color: white;
+        font-size: 0.7rem;
+    }
+    .dropdown-menu {
+        width: 55%;
+    }
+    select {
+        height: 40px;
+    }
+    .div-pockemon {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+    .container-pockemon {
+        width: 80%;
+        height: 90%;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .section-pockemon {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        gap: 30px;
+    }
+    main {
+        min-height: 100dvh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .try-again {
+        width: 80%;
+        height: 200px;
+    }
+    .description {
+        width: 85%;
+    }
+    .div-pockemon .text {
+        width: 90%;
+    }
+    .fighting-result {
+        width: 80%;
+    }
+    .fighting-btns-container button {
+        font-size: 0.8rem;
+        width: 40%;
+        height: 35%;
+    }
+    .fighting {
+        font-size: 0.8rem;
+    }
+    .fighting-result p {
+        font-size: 0.8rem;
+    }
+    .replay-div {
+        height: 100%;
+    }
+    /*  */
+    @keyframes fire {
+        0% {
+            transform: translateY(50px);
+            -webkit-transform: translateY(50px);
+            -moz-transform: translateY(50px);
+            -ms-transform: translateY(50px);
+            -o-transform: translateY(50px);
+        }
+        40% {
+            transform: translateY(100px);
+            -webkit-transform: translateY(100px);
+            -moz-transform: translateY(100px);
+            -ms-transform: translateY(100px);
+            -o-transform: translateY(100px);
+        }
+        50% {
+            transform: translateY(200px);
+            -webkit-transform: translateY(200px);
+            -moz-transform: translateY(200px);
+            -ms-transform: translateY(200px);
+            -o-transform: translateY(200px);
+        }
+        75% {
+            transform: translateY(300px);
+            -webkit-transform: translateY(300px);
+            -moz-transform: translateY(300px);
+            -ms-transform: translateY(300px);
+            -o-transform: translateY(300px);
+        }
+        100% {
+            transform: translateY(500px);
+            -webkit-transform: translateY(500px);
+            -moz-transform: translateY(500px);
+            -ms-transform: translateY(500px);
+            -o-transform: translateY(500px);
+        }
+    }
+    @keyframes fire1 {
+        0% {
+            transform: translateY(-50px);
+            -webkit-transform: translateY(-50px);
+            -moz-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+            -o-transform: translateY(-50px);
+        }
+        40% {
+            transform: translateY(-100px);
+            -webkit-transform: translateY(-100px);
+            -moz-transform: translateY(-100px);
+            -ms-transform: translateY(-100px);
+            -o-transform: translateY(-100px);
+        }
+        50% {
+            transform: translateY(-200px);
+            -webkit-transform: translateY(-200px);
+            -moz-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            -o-transform: translateY(-200px);
+        }
+        75% {
+            transform: translateY(-300px);
+            -webkit-transform: translateY(-300px);
+            -moz-transform: translateY(-300px);
+            -ms-transform: translateY(-300px);
+            -o-transform: translateY(-300px);
+        }
+        100% {
+            transform: translateY(-400px);
+            -webkit-transform: translateY(-400px);
+            -moz-transform: translateY(-400px);
+            -ms-transform: translateY(-400px);
+            -o-transform: translateY(-400px);
+        }
+    }
+}
+
+@media(min-width:900px)and (max-width:1400px) {
+    .div-pockemon {
+        width: 80%;
+        height: 1150px;
+    }
+    .div-pockemon .text {
+        width: 80%;
+    }
+    .fighting-result {
+        width: 90%;
+    }
+    .fighting-btns-container button {
+        font-size: 0.8rem;
+    }
+    .fighting {
+        font-size: 0.8rem;
+    }
+}
